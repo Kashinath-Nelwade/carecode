@@ -105,8 +105,7 @@ function generateQRCode(id) {
     qrcodeDiv.innerHTML = '';
     
     // Use your GitHub Pages URL
-    const appUrl = `https://Kashinath-Nelwade.github.io/carecode/view.html?id=${id}`;
-    
+   const appUrl = `https://carecode.com/view.html?id=${id}`;
     new QRCode(qrcodeDiv, {
         text: appUrl,
         width: 200,
