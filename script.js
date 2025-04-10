@@ -77,17 +77,36 @@ if (userForm) {
 // }
 
 // Generate QR code with a URL that points to your hosted app
+// function generateQRCode(id) {
+//     // Clear previous QR code
+//     qrcodeDiv.innerHTML = '';
+
+//     // Create the URL that will be encoded in the QR
+//     // Replace with your actual hosted URL when deployed
+//     const appUrl = window.location.href.includes('view.html')
+//         ? window.location.href.replace('view.html', 'view.html?id=' + id)
+//         : window.location.href.replace('index.html', 'view.html?id=' + id);
+
+//     // Create new QR code with the full URL
+//     new QRCode(qrcodeDiv, {
+//         text: appUrl,
+//         width: 200,
+//         height: 200,
+//         colorDark: "#000000",
+//         colorLight: "#ffffff",
+//         correctLevel: QRCode.CorrectLevel.H
+//     });
+// }
+
+
+// this code i get from the github 
+
 function generateQRCode(id) {
-    // Clear previous QR code
     qrcodeDiv.innerHTML = '';
-
-    // Create the URL that will be encoded in the QR
-    // Replace with your actual hosted URL when deployed
-    const appUrl = window.location.href.includes('view.html')
-        ? window.location.href.replace('view.html', 'view.html?id=' + id)
-        : window.location.href.replace('index.html', 'view.html?id=' + id);
-
-    // Create new QR code with the full URL
+    
+    // Use your GitHub Pages URL
+    const appUrl = `https://YOUR-USERNAME.github.io/carecode/view.html?id=${id}`;
+    
     new QRCode(qrcodeDiv, {
         text: appUrl,
         width: 200,
@@ -97,6 +116,10 @@ function generateQRCode(id) {
         correctLevel: QRCode.CorrectLevel.H
     });
 }
+
+
+
+
 
 // Download QR code
 if (downloadBtn) {
